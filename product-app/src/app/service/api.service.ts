@@ -8,7 +8,7 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class ApiService {
 
-  baseUri:string = 'http://localhost:3000/api';
+  baseUri:string = '/api';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }

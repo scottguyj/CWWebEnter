@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'dist/product-app')));
 app.use('/', express.static(path.join(__dirname, 'dist/products-app')));
 app.use('/api', router)
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const server = app.listen(port, () => {
     console.log('connected to port ' + port)
