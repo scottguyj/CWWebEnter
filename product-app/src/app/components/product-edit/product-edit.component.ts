@@ -30,8 +30,8 @@ export class ProductEditComponent implements OnInit {
     this.editProductForm= this.fb.group({
       name:['', [Validators.required]],
       location: ['', [Validators.required]],
-      expiry:['', [Validators.required]],
-      amount:['',[Validators.required, Validators.pattern('^[0-9]+$')]],
+      expiry:['', [Validators.required, DateValidator.usDate]],
+      amount:['',[Validators.required]],
       days:['0',[Validators.pattern('^[0-9]+$')]]
     })
   }
@@ -56,7 +56,7 @@ export class ProductEditComponent implements OnInit {
     this.editProductForm = this.fb.group({
       name:['', [Validators.required]],
       location: ['', [Validators.required]],
-      expiry:['', [Validators.required]],
+      expiry:['', [Validators.required, DateValidator.usDate]],
       amount:['',[Validators.required]],
       days:['0',[Validators.pattern('^[0-9]+$')]]
     })
