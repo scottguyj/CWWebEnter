@@ -44,15 +44,15 @@ export class ProductCreateComponent implements OnInit {
 
     //input Sanitizer
     var name = this.productForm.value['name'];
-    var cleanName = name.replace(/[^a-zA-Z0-9]/g,'');
+    var cleanName = name.replace(/[^a-zA-Z0-9 ]/g,'');
 
     var location = this.productForm.value['location'];
-    var cleanLocation = location.replace(/[^a-zA-Z0-9]/g,'');
+    var cleanLocation = location.replace(/[^a-zA-Z0-9 ]/g,'');
 
     var expiryNew = this.productForm.value['expiry'];
 
     var amount = this.productForm.value['amount'];
-    var amountNew = amount.replace(/[^a-zA-Z0-9]/g,'');
+    var amountNew = amount.replace(/[^a-zA-Z0-9 ]/g,'');
 
     var daysNew = this.productForm.value['days'];
 
