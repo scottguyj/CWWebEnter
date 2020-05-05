@@ -57,7 +57,7 @@ export class ProductEditComponent implements OnInit {
       name:['', [Validators.required]],
       location: ['', [Validators.required]],
       expiry:['', [Validators.required]],
-      amount:['',[Validators.required, Validators.pattern('^[0-9]+$')]],
+      amount:['',[Validators.required]],
       days:['0',[Validators.pattern('^[0-9]+$')]]
     })
   }
