@@ -5,7 +5,7 @@ let ProductSchema = new Schema({
    name: {type: String},
    location: {type: String},
    expiry: {type: String},
-   amount: {type: Number},
+   amount: {type: String},
    days: {type: Number}
 }, {
     collection: 'Products'

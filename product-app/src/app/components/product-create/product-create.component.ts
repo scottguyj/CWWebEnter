@@ -30,7 +30,7 @@ export class ProductCreateComponent implements OnInit {
       name:['', [Validators.required]],
       location: ['', [Validators.required]],
       expiry:['', [Validators.required, DateValidator.usDate]],
-      amount:['',[Validators.required, Validators.pattern('^[0-9]+$')]],
+      amount:['',[Validators.required]],
       days:['0',[Validators.pattern('^[0-9]+$')]]
     })
   }
@@ -50,7 +50,10 @@ export class ProductCreateComponent implements OnInit {
     var cleanLocation = location.replace(/[^a-zA-Z0-9]/g,'');
 
     var expiryNew = this.productForm.value['expiry'];
-    var amountNew = this.productForm.value['amount'];
+
+    var amount = this.productForm.value['amount'];
+    var amountNew = amount.replace(/[^a-zA-Z0-9]/g,'');
+
     var daysNew = this.productForm.value['days'];
 
     this.productForm.setValue({name: cleanName, location: cleanLocation, expiry: expiryNew, amount: amountNew, days:daysNew})

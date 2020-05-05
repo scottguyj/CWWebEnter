@@ -65,7 +65,7 @@ export class ProductEditComponent implements OnInit {
   
 
   onSubmit(){
-    //input Sanitizer
+    //input Sanitizer (removing all special characters from Name, location and amount)
     var name = this.editProductForm.value['name'];
     var cleanName = name.replace(/[^a-zA-Z0-9]/g,'');
 
@@ -73,7 +73,11 @@ export class ProductEditComponent implements OnInit {
     var cleanLocation = location.replace(/[^a-zA-Z0-9]/g,'');
 
     var expiryNew = this.editProductForm.value['expiry'];
-    var amountNew = this.editProductForm.value['amount'];
+    
+    
+    var amount = this.editProductForm.value['amount'];
+    var amountNew = amount.replace(/[^a-zA-Z0-9]/g,'');
+
     var daysNew = this.editProductForm.value['days'];
 
     this.editProductForm.setValue({name: cleanName, location: cleanLocation, expiry: expiryNew, amount: amountNew, days:daysNew})

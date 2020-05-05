@@ -2,6 +2,6 @@ export class Product {
     name:  string;
     location: string;
     expiry: string;
-    amount: number;
+    amount: string;
     days: number;
 }
