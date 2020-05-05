@@ -33,20 +33,6 @@ export class ProductScreenComponent implements OnInit {
     })
   }
 
-  getColor(daysDif){
-    if(daysDif < 0){
-      return "red"
-    }
-    if (daysDif == 0) {
-      return "yellow"
-      
-    } else {
-      return "green"
-      
-    }
-  }
-
- 
 
   removeProduct(product, index) {
     if(window.confirm('Are you sure?')) {
