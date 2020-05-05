@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './../../service/api.service';
 import { Product } from 'src/app/model/product';
+import { reduce } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-screen',
@@ -10,6 +11,8 @@ import { Product } from 'src/app/model/product';
 export class ProductScreenComponent implements OnInit {
 
   Products: any = [];
+  
+  
 
   
 
@@ -28,6 +31,19 @@ export class ProductScreenComponent implements OnInit {
     this.apiService.getProducts().subscribe((data) => {
       this.Products = data;
     })
+  }
+
+  getColor(daysDif){
+    if(daysDif < 0){
+      return "red"
+    }
+    if (daysDif == 0) {
+      return "yellow"
+      
+    } else {
+      return "green"
+      
+    }
   }
 
  
