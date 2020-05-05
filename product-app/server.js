@@ -12,6 +12,8 @@ mongoose.connect(dbConfig.db, {
     useUnifiedTopology: true
 });
 
+//Confirmation Message
+
 mongoose.connection.on('connected', () => {
     console.log('Mongoose is connected');
 });
@@ -31,7 +33,11 @@ app.use(express.static(path.join(__dirname, 'dist/product-app')));
 app.use('/', express.static(path.join(__dirname, 'dist/products-app')));
 app.use('/api', router)
 
+//Setting UP Port
+
 const port = process.env.PORT || 3000;
+
+//Confirmation Message
 
 const server = app.listen(port, () => {
     console.log('connected to port ' + port)

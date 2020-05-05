@@ -44,6 +44,8 @@ export class ApiService {
       catchError(this.errorMgmt)
     )
   }
+  
+  //Delete a product
 
   deleteProduct(id): Observable<any> {
     let url = `${this.baseUri}/delete-product/${id}`;

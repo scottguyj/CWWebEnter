@@ -16,12 +16,15 @@
         </tr>
       </thead>
       <tbody>
+        <!--OUTPUT OF THE DATABASE-->
         <tr *ngFor="let product of Products; let i = index">
           <th scope="row">{{product.name}}</th>
           <td>{{product.location}}</td>
           <td>{{product.expiry}}</td>
           <td>{{product.amount}}</td>
           <td>{{product.days}}</td>
+
+          <!--BUTTONS-->
 
           <td class="text-center edit-block">
             <span class="edit" [routerLink]="['/edit-product/', product._id]">

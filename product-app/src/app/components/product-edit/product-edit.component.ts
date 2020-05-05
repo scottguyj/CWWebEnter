@@ -27,6 +27,7 @@ export class ProductEditComponent implements OnInit {
     this.getProduct(id);
     
 
+    //Form Builder set Up
     this.editProductForm= this.fb.group({
       name:['', [Validators.required]],
       location: ['', [Validators.required]],
@@ -51,7 +52,7 @@ export class ProductEditComponent implements OnInit {
       });
     });
   }
-
+  //Form Builder set Up
   updateProductInfo(){
     this.editProductForm = this.fb.group({
       name:['', [Validators.required]],

@@ -6,6 +6,8 @@ import { ProductCreateComponent} from './components/product-create/product-creat
 import { ProductEditComponent} from './components/product-edit/product-edit.component';
 import { ProductAboutComponent} from './components/product-about/product-about.component';
 
+//Setting up the routes of the web app
+
 const routes: Routes = [{
   path:'', pathMatch: 'full', redirectTo: 'product-screen'},
   {path: 'product-screen', component: ProductScreenComponent },

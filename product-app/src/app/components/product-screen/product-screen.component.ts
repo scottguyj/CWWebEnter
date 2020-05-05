@@ -27,6 +27,8 @@ export class ProductScreenComponent implements OnInit {
 
   ngOnInit() {}
 
+  //GET ALLL PRODUCTS
+
   readProducts(){
     this.apiService.getProducts().subscribe((data) => {
       this.Products = data;
@@ -34,6 +36,7 @@ export class ProductScreenComponent implements OnInit {
   }
 
 
+  //REMOVE PRODUCT FROM DATABASE
   removeProduct(product, index) {
     if(window.confirm('Are you sure?')) {
       this.apiService.deleteProduct(product._id).subscribe((data) => {

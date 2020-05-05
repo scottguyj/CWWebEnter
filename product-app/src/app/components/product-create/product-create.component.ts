@@ -25,6 +25,8 @@ export class ProductCreateComponent implements OnInit {
   ngOnInit(){
   }
 
+
+  //Form Builder set Up and Validation
   mainForm(){
     this.productForm = this.fb.group({
       name:['', [Validators.required]],
@@ -42,7 +44,7 @@ export class ProductCreateComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    //input Sanitizer
+    //input Sanitizer (Remove Special Characters)
     var name = this.productForm.value['name'];
     var cleanName = name.replace(/[^a-zA-Z0-9 ]/g,'');
 
@@ -56,12 +58,13 @@ export class ProductCreateComponent implements OnInit {
 
     var daysNew = this.productForm.value['days'];
 
+    //Set New Value of product before sending to server
     this.productForm.setValue({name: cleanName, location: cleanLocation, expiry: expiryNew, amount: amountNew, days:daysNew})
     if(!this.productForm.valid){
       return false;
     } else {
       this.apiService.createProduct(this.productForm.value).subscribe((res) => {
-        console.log('Employee successfully added!')
+        console.log('Product successfully added!')
         this.ngZone.run(()=> this.router.navigateByUrl('/product-screen'))
       }, (err) => {
         console.log(err);
@@ -72,7 +75,7 @@ export class ProductCreateComponent implements OnInit {
 }
 import { FormControl } from '@angular/forms';
 
-
+//Class for Validating Date
 export class DateValidator {
   static usDate(control: FormControl): { [key: string]: any } {
     let usDatePattern = /^02\/(?:[01]\d|2\d)\/(?:19|20)(?:0[048]|[13579][26]|[2468][048])|(?:0[13578]|10|12)\/(?:[0-2]\d|3[01])\/(?:19|20)\d{2}|(?:0[469]|11)\/(?:[0-2]\d|30)\/(?:19|20)\d{2}|02\/(?:[0-1]\d|2[0-8])\/(?:19|20)\d{2}$/;

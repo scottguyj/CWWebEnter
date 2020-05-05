@@ -9,6 +9,8 @@
 
       <div class="card-body">
         <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
+          <!--Name Input Box-->
           
           <div class="form-group">
             <label for="inputName">Name</label>
@@ -19,6 +21,8 @@
             </div>
           </div>
 
+          <!--Location Input Box-->
+          
           <div class="form-group">
             <label for="inputlocation">Location</label>
             <input class="form-control" type="text" formControlName="location">
@@ -27,6 +31,8 @@
               Enter the Location of product
             </div>
           </div>
+
+          <!--Expiry Input Box-->
 
           <div class="form-group">
             <label for="inputVerify3">Expiry Date (mm/dd/yyyy)</label>
@@ -39,6 +45,8 @@
              Enter valid expiry
            </div>
           </div>
+
+          <!--Amount Input Box-->
           
           <div class="form-group">
             <label for="inputAmount">Amount</label>
@@ -48,6 +56,8 @@
                 Enter The amount you have.
             </div>
           </div>
+
+          <!--Days Input Box-->
 
           <div class="form-group">
             <label for="inputDays">Days before Expiry</label>
